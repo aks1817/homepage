@@ -7,10 +7,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-4">
-              AI Boost
+              VegaPro
             </div>
             <p className="text-gray-400 text-sm">
-              Elevate your site's visibility with AI-powered SEO tools.
+              We believe in driving innovation at the speed of thought
             </p>
           </div>
           {['Product', 'Company', 'Resources', 'Legal'].map((section) => (

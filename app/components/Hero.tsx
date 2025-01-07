@@ -9,10 +9,10 @@ export default function Hero() {
           <span className="ml-2 text-xs text-gray-400">Latest integration just arrived</span>
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-          Boost your<br />rankings with AI.
+          Boost your<br />Business with AI
         </h1>
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-          Elevate your site's visibility effortlessly with AI, where smart technology meets user-friendly SEO tools.
+        We believe in driving innovation at the speed of thought
         </p>
         <Button className="bg-white text-black hover:bg-gray-100 text-lg px-8 py-6 h-auto">
           Start for free

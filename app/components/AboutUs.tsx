@@ -14,12 +14,10 @@ export default function AboutUs() {
               Transforming Businesses Through AI Innovation
             </h2>
             <p className="text-gray-400 leading-relaxed">
-              We are a leading AI consulting firm specializing in developing cutting-edge solutions 
-              that help businesses optimize their operations, enhance decision-making processes, 
-              and drive sustainable growth through artificial intelligence.
+            We are a premier AI consulting firm dedicated to delivering state-of-the-art solutions that empower businesses to excel in their core operations. By leveraging the power of artificial intelligence, we enable organizations to enhance decision-making, optimize processes, and achieve sustainable growth. Our expertise helps you stay ahead in a rapidly evolving digital landscape, transforming challenges into opportunities for success
             </p>
             <div className="space-y-4">
-              {['10+ Years of Excellence', 'Global Client Portfolio', 'Industry-Leading Expertise'].map((item, index) => (
+              {['100+ years of collective expertise', 'Premium services, competitive rates', 'Global Client Portfolio', 'Industry Experts'].map((item, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-purple-500" />
                   <span className="text-gray-300">{item}</span>
