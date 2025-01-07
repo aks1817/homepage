@@ -45,7 +45,7 @@ export default function Services() {
             Comprehensive AI Solutions for Your Business
           </h2>
           <p className="text-gray-400">
-            We offer a wide range of AI consulting services to help businesses harness 
+            We offer a wide range of AI & Software consulting services to help businesses harness 
             the power of artificial intelligence and stay ahead of the competition.
           </p>
         </div>

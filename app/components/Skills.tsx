@@ -1,10 +1,12 @@
 const skills = [
   { name: 'Artificial Intelligence', percentage: 95 },
   { name: 'Machine Learning', percentage: 90 },
-  { name: 'Deep Learning', percentage: 85 },
+  { name: 'Mobile App Development', percentage: 85 },
   { name: 'Natural Language Processing', percentage: 88 },
-  { name: 'Computer Vision', percentage: 92 },
-  { name: 'Data Analytics', percentage: 94 }
+  { name: 'Cloud Engineering', percentage: 92 },
+  { name: 'Data Analytics', percentage: 94 },
+  { name: 'Data Science', percentage: 94 },
+  { name: 'Product Development & Automation', percentage: 94 }
 ]
 
 export default function Skills() {
@@ -19,7 +21,7 @@ export default function Skills() {
             Technical Expertise That Drives Results
           </h2>
           <p className="text-gray-400">
-            Our team possesses deep expertise across the AI spectrum, enabling us to 
+            Our team possesses deep expertise in the AI & Software domain, enabling us to 
             deliver cutting-edge solutions for complex business challenges.
           </p>
         </div>

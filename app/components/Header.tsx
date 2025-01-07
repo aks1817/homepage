@@ -21,7 +21,7 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-            AI Boost
+            VegaPro
           </Link>
           <nav className="hidden md:flex items-center space-x-8">
             <div className="relative group">

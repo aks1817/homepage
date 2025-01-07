@@ -2,8 +2,8 @@ import { Linkedin, Twitter, Github } from 'lucide-react'
 
 const team = [
   {
-    name: "Dr. Alexandra Chen",
-    role: "Chief AI Scientist",
+    name: "Siddharth Shukla",
+    role: "Data Science Engineer",
     image: "/placeholder.svg?height=400&width=400",
     social: {
       linkedin: "#",
@@ -12,8 +12,8 @@ const team = [
     }
   },
   {
-    name: "Marcus Rodriguez",
-    role: "ML Engineering Lead",
+    name: "Navneet Kumar",
+    role: "Software Engineer",
     image: "/placeholder.svg?height=400&width=400",
     social: {
       linkedin: "#",
@@ -22,8 +22,8 @@ const team = [
     }
   },
   {
-    name: "Dr. Sarah Kim",
-    role: "Data Science Director",
+    name: "Anurag Shukla",
+    role: "Mobile App Developer",
     image: "/placeholder.svg?height=400&width=400",
     social: {
       linkedin: "#",
