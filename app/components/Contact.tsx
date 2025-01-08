@@ -13,7 +13,7 @@ export default function Contact() {
             Get in Touch
           </h2>
           <p className="text-gray-400">
-            Ready to transform your business with AI? Contact us today for a consultation.
+            Ready to transform your business with AI? Contact us today for a free consultation.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
@@ -24,7 +24,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Email Us</h3>
-                <p className="text-gray-400">info@aicompany.com</p>
+                <p className="text-gray-400">vegapro.ai@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -33,10 +33,11 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Call Us</h3>
-                <p className="text-gray-400">+1 (555) 123-4567</p>
+                <p className="text-gray-400">+91 9398635802</p>
+                <p className="text-gray-400">+91 7337059915</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
+            {/* <div className="flex items-start space-x-4">
               <div className="bg-purple-500/20 p-3 rounded-lg">
                 <MapPin className="w-6 h-6 text-purple-400" />
               </div>
@@ -44,7 +45,7 @@ export default function Contact() {
                 <h3 className="font-semibold mb-1">Visit Us</h3>
                 <p className="text-gray-400">123 AI Street, Tech City, TC 12345</p>
               </div>
-            </div>
+            </div> */}
           </div>
           <form className="space-y-6">
             <div>
