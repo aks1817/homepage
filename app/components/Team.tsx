@@ -39,7 +39,7 @@ const team = [
   },
   {
     name: "Saurabh Singh",
-    experience: "2+ yoe (ex- ZS)",
+    experience: "2+ yoe (ex- ZS Associates)",
     education: "",
     role: "Product Development Engineer",
     image: "/saurabh.jpg?height=400&width=400",
