@@ -3,8 +3,10 @@ import { Linkedin, Twitter, Github } from 'lucide-react'
 const team = [
   {
     name: "Siddharth Shukla",
+    experience: "6+ yoe (ex-PayPal)",
+    education: "BITS Pilani, IIM K",
     role: "Data Science Engineer",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/sid.jpg?height=400&width=400",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -13,8 +15,10 @@ const team = [
   },
   {
     name: "Navneet Kumar",
-    role: "Software Engineer",
-    image: "/placeholder.svg?height=400&width=400",
+    experience: "6+ yoe (ex-Amazon)",
+    education: "BITS Pilani",
+    role: "Machine Learning Engineer",
+    image: "/navneet.jpg?height=400&width=400",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -23,8 +27,10 @@ const team = [
   },
   {
     name: "Anurag Shukla",
+    experience: "2+ yoe",
+    education: "Founding engineer at Wise",
     role: "Mobile App Developer",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/anurag.jpg?height=400&width=400",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -32,9 +38,11 @@ const team = [
     }
   },
   {
-    name: "James Wilson",
-    role: "AI Solutions Architect",
-    image: "/placeholder.svg?height=400&width=400",
+    name: "Saurabh Singh",
+    experience: "2+ yoe (ex- ZS)",
+    education: "",
+    role: "Product Development Engineer",
+    image: "/saurabh.jpg?height=400&width=400",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -52,7 +60,7 @@ export default function Team() {
             <span className="text-sm font-medium text-purple-400">Our Team</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Meet Our AI Experts
+            Meet Our Techies
           </h2>
           <p className="text-gray-400">
             Our team of experienced professionals is dedicated to delivering 
@@ -88,6 +96,8 @@ export default function Team() {
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
                 <p className="text-purple-400">{member.role}</p>
+                <p className="text-purple-400">{member.experience}</p>
+                <p className="text-purple-400">{member.education}</p>
               </div>
             </div>
           ))}
