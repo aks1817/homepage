@@ -18,7 +18,7 @@ const team = [
     experience: "6+ yoe (ex-Amazon)",
     education: "BITS Pilani",
     role: "Machine Learning Engineer",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/navneet.jpg?height=400&width=400",
     social: {
       linkedin: "#",
       twitter: "#",
