@@ -32,7 +32,7 @@ export default function AboutUs() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-3xl" />
             <img 
-              src="/placeholder.svg?height=400&width=600" 
+              src="/AI-Image.jpg?height=400&width=600" 
               alt="About Us" 
               className="relative rounded-2xl border border-purple-500/20"
             />
