@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "VegaPro.AI | Innovate Faster",
-  description: "Created with v0",
+  description: "Boost your Business with AI",
 };
 
 export default function RootLayout({

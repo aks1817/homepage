@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <section id="about-us" className="py-20">
       <div className="container mx-auto px-6 gap-12 flex flex-row">
-        <div className="grid items-center w-1/2">
+        <div className="grid items-center  md:w-1/2">
           <div className="space-y-6">
             <div className="inline-flex items-center bg-purple-500/10 rounded-full py-2">
               <span className="text-xl font-medium text-purple-400">
@@ -43,7 +43,7 @@ export default function AboutUs() {
             </Button> */}
           </div>
         </div>
-        <div className="relative flex items-center w-1/2">
+        <div className="relative  items-center w-1/2 hidden md:block">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-3xl" />
           <img
             src="/AI-Image.jpg"
