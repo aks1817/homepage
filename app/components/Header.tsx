@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 const tabs = [
   { tabName: "About Us", link: "about-us" },
@@ -13,17 +14,22 @@ const tabs = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
+  useEffect(() => {
+    const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-    });
-  }
+    };
 
-  const handleScroll = (id: any) => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -54,8 +60,34 @@ export default function Header() {
               </button>
             ))}
           </nav>
+          <button
+            className="md:hidden text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6 " />
+            )}
+          </button>
         </div>
       </div>
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-black/90 backdrop-blur-lg">
+          <div className="container mx-auto px-6 py-4">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                onClick={() => handleScroll(tab.link)}
+                className="block w-full text-left py-2 text-sm text-gray-300 hover:text-white transition-colors "
+              >
+                {tab.tabName}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
