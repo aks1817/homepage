@@ -6,9 +6,9 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    Name: "",
-    Email: "",
-    Message: "",
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,23 +33,36 @@ export default function Contact() {
     try {
       const response = await fetch(scriptURL, {
         method: "POST",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-      if (result.success) {
+      const result = await response.text();
+      let jsonResult;
+
+      try {
+        jsonResult = JSON.parse(result);
+      } catch (parseError) {
+        console.error("Error parsing response:", result);
+        throw new Error("Invalid response from server");
+      }
+
+      if (jsonResult.success) {
         toast.success("Form submitted successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error(result.error || "Failed to submit the form.");
+        throw new Error(jsonResult.message || "Failed to submit the form.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("An error occurred. Please try again.");
+      toast.error(`An error occurred: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
