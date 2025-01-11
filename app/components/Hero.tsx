@@ -25,7 +25,9 @@ export default function Hero() {
         backgroundImage: "url('/bg.jpg')",
       }}
     >
-      <div className="container mx-auto px-6 py-20 text-center">
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative container mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
           Boost your
           <br />
@@ -34,9 +36,7 @@ export default function Hero() {
         <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-8">
           We believe in driving innovation at the speed of thought
         </p>
-
         <Button
-          onClick={() => handleScroll("contact-us")}
           variant="secondary"
           className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-4 h-auto"
         >

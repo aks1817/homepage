@@ -47,7 +47,7 @@ export default function Header() {
             href="/"
             className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent"
           >
-            VegaPro.AI
+            VegaPro.ai
           </Link>
           <nav className="hidden md:flex items-center space-x-8">
             {tabs.map((tab, index) => (

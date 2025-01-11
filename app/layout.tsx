@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "VegaPro.AI | Innovate Faster",
+  title: "VegaPro.ai | Innovate Faster",
   description: "Boost your Business with AI",
 };
 

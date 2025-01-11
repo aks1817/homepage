@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-4">
-              VegaPro.AI
+              VegaPro.ai
             </div>
             {/* <p className="text-gray-400 text-sm">
               We believe in driving innovation at the speed of thought
