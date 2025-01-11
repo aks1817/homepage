@@ -1,9 +1,63 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    Name: "",
+    Email: "",
+    Message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbx1SwNJFhYJ2w85YvDm9o5582_cbxiRDxKeFp-sT2QMmRqIBa2PnrmUkXEhU1aDv3At/exec";
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Form submitted successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(result.error || "Failed to submit the form.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact-us" className="py-20 bg-black/50">
+      <Toaster position="top-center" />
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center bg-purple-500/10 rounded-full px-4 py-2 mb-6">
@@ -21,7 +75,19 @@ export default function Contact() {
           <div className="space-y-8">
             <div className="flex items-start space-x-4">
               <div className="bg-purple-500/20 p-3 rounded-lg">
-                <Mail className="w-6 h-6 text-purple-400" />
+                <svg
+                  className="w-6 h-6 text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 12a4 4 0 11-8 0 4 4 0 018 0zm6 8v-1a3 3 0 00-3-3H5a3 3 0 00-3 3v1"
+                  />
+                </svg>
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Email Us</h3>
@@ -30,7 +96,19 @@ export default function Contact() {
             </div>
             <div className="flex items-start space-x-4">
               <div className="bg-purple-500/20 p-3 rounded-lg">
-                <Phone className="w-6 h-6 text-purple-400" />
+                <svg
+                  className="w-6 h-6 text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 10h11M9 21l6-16m5 16l-6-16"
+                  />
+                </svg>
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Call Us</h3>
@@ -38,39 +116,44 @@ export default function Contact() {
                 <p className="text-gray-400">+91 7337059915</p>
               </div>
             </div>
-            {/* <div className="flex items-start space-x-4">
-              <div className="bg-purple-500/20 p-3 rounded-lg">
-                <MapPin className="w-6 h-6 text-purple-400" />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Visit Us</h3>
-                <p className="text-gray-400">123 AI Street, Tech City, TC 12345</p>
-              </div>
-            </div> */}
           </div>
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full bg-purple-500/10 border border-purple-500/20 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500/40"
+                required
               />
             </div>
             <div>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 className="w-full bg-purple-500/10 border border-purple-500/20 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500/40"
+                required
               />
             </div>
             <div>
               <textarea
                 rows={4}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
                 className="w-full bg-purple-500/10 border border-purple-500/20 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500/40"
+                required
               />
             </div>
-            <Button className="w-full">Send Message</Button>
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Send Message"}
+            </Button>
           </form>
         </div>
       </div>
