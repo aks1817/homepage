@@ -28,7 +28,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbx1SwNJFhYJ2w85YvDm9o5582_cbxiRDxKeFp-sT2QMmRqIBa2PnrmUkXEhU1aDv3At/exec";
+      "https://script.google.com/macros/s/AKfycbzBEYkokXtpgm7rNT_zeSn4A5iVpnLyl2t6TXzOspnnPSv9pFNl3QFeN2XSbtgsGNjz/exec";
 
     try {
       const response = await fetch(scriptURL, {
