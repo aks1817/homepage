@@ -37,6 +37,7 @@ export default function Hero() {
           We believe in driving innovation at the speed of thought
         </p>
         <Button
+          onClick={() => handleScroll("contact-us")}
           variant="secondary"
           className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-4 h-auto"
         >
