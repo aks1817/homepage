@@ -41,7 +41,7 @@ export default function Hero() {
           variant="secondary"
           className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-4 h-auto"
         >
-          Claim Your Free Consult
+          Claim Your Free Consultation
         </Button>
       </div>
     </section>
