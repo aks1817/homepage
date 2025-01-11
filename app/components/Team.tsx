@@ -28,7 +28,7 @@ const team = [
   {
     name: "Anurag Shukla",
     experience: "2+ yoe",
-    education: "Founding engineer at Wise",
+    education: "Founding engineer at Spilz",
     role: "Mobile App Developer",
     image: "/anurag.jpg?height=400&width=400",
     social: {
