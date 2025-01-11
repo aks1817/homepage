@@ -1,7 +1,7 @@
 const skills = [
   { name: "Artificial Intelligence", percentage: 95 },
-  { name: "Machine Learning", percentage: 90 },
-  { name: "Mobile App Development", percentage: 85 },
+  { name: "Machine Learning", percentage: 95 },
+  { name: "Mobile App Development", percentage: 95 },
   { name: "Natural Language Processing", percentage: 88 },
   { name: "Cloud Engineering", percentage: 92 },
   { name: "Data Analytics", percentage: 94 },
