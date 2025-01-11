@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -30,38 +31,27 @@ export default function Contact() {
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbzBEYkokXtpgm7rNT_zeSn4A5iVpnLyl2t6TXzOspnnPSv9pFNl3QFeN2XSbtgsGNjz/exec";
 
-    try {
-      const response = await fetch(scriptURL, {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    const config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: scriptURL,
+      headers: {
+        "Content-Type": "text/plain",
+      },
+      data: JSON.stringify(formData),
+    };
 
-      if (!response.ok) {
+    try {
+      const response = await axios.request(config);
+      const res = response.data;
+      if (!res.success) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const result = await response.text();
-      let jsonResult;
-
-      try {
-        jsonResult = JSON.parse(result);
-      } catch (parseError) {
-        console.error("Error parsing response:", result);
-        throw new Error("Invalid response from server");
-      }
-
-      if (jsonResult.success) {
-        toast.success("Form submitted successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error(jsonResult.message || "Failed to submit the form.");
-      }
+      toast.success("Form submitted successfully!");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error(error);
       toast.error(`An error occurred: ${error.message}`);
     } finally {
       setIsSubmitting(false);
@@ -159,12 +149,17 @@ export default function Contact() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Your Message"
+                placeholder="Your Query"
                 className="w-full bg-purple-500/10 border border-purple-500/20 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500/40"
                 required
               />
             </div>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              variant="secondary"
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "Send Message"}
             </Button>
           </form>
