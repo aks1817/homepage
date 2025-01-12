@@ -1,0 +1,27 @@
+/* Custom styles for the carousel */
+.team-carousel .slick-track {
+  display: flex !important;
+}
+
+.team-carousel .slick-slide {
+  height: inherit !important;
+  display: flex !important;
+  padding: 0 10px;
+}
+
+.team-carousel .slick-slide > div {
+  display: flex;
+  width: 100%;
+}
+
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button:before {
+  color: #a855f7;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #a855f7;
+}
