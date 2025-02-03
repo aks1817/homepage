@@ -44,6 +44,18 @@ const team = [
     },
   },
   {
+    name: "Ashish Parmar",
+    experience: "3+ yoe (ex-Microsoft)",
+    education: "",
+    role: "AI Researcher at xAI(an X company)",
+    image: "/Ashish.jpg?height=400&width=400",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      github: "#",
+    },
+  },
+  {
     name: "Anurag Shukla",
     experience: "2+ yoe",
     education: "Founding engineer at Spilz",
