@@ -8,7 +8,7 @@ const tabs = [
   { tabName: "About Us", link: "about-us" },
   { tabName: "Services", link: "services" },
   { tabName: "Our Expertise", link: "our-expertise" },
-  { tabName: "Core Team", link: "core-team" },
+  // { tabName: "Core Team", link: "core-team" },
   { tabName: "Contact Us", link: "contact-us" },
 ];
 
